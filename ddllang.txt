@@ -1,0 +1,24 @@
+3nd experiment 
+
+DDL: Data Definition Language 
+Create table 
+create table table_name(coumn_name1 datatype(size), coumn_name2 datatype(size), …);
+For example: 
+create table Student(Roll_no int(10), Name varchar(10), Department varchar(20));
+
+Alter Table 
+1)ADD: to add a new column 
+2)MODIFY: to modify datatype and size of a column 
+
+ADD 
+alter table table_name ADD column_name datatype(size);
+For example : 
+alter table student ADD contact_no int(20);
+
+Modify 
+alter table table_name modify column_name datatype(size);
+For example : 
+alter table student modify Roll_no int(5);
+To drop/delete the table 
+DROP table table_name;
+

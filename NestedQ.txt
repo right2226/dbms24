@@ -1,0 +1,10 @@
+
+Nested query
+
+SELECT column1, column2, ...
+FROM table1
+WHERE column1 = (SELECT column1 FROM table2 WHERE condition);
+Eg:
+SELECT name
+FROM students
+WHERE student_id IN (SELECT student_id FROM grades WHERE subject = 'Mathematics' AND score > 90);

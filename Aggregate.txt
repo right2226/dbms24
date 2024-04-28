@@ -1,0 +1,33 @@
+Aggregate functions 
+
+Note: Data_type of column must be integer 
+
+SELECT AVG(column_name) FR OM table_name; 
+
+SELECT MAX(column_name) FROM table_name;
+
+SELECT MIN(column_name) FROM table_name;
+
+SELECT COUNT(column_name) FROM table_name;
+
+SELECT SUM(column_name) FROM table_name;
+
+Search a name that start with a 
+SELECT Name
+FROM student
+WHERE Name LIKE ‘a%’;
+
+Search a name that ends with b 
+SELECT Name
+FROM student
+WHERE Name LIKE ‘%b’;
+
+Show the details of students whose Roll no in between 10 to 20 
+SELECT * 
+FROM student
+WHERE Roll_no BETWEEN 10 AND 20;
+
+Show the details of student who lives Either in Delhi or in Mumbai 
+SELECT * 
+FROM student
+WHERE Address IN (‘Delhi’, ‘Mumbai’);

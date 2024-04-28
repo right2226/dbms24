@@ -1,0 +1,21 @@
+2 experiment
+
+To open mysql prompt 
+sudo mysql -u root -p
+
+Then Enter password ‘computer’ 
+
+To view databases 
+show databases;
+
+To create database 
+create database database_name;
+
+Enter into database 
+use database_name;
+
+To view all table 
+show tables;
+
+To show table
+Desc table_name;

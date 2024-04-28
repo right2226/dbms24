@@ -1,0 +1,34 @@
+4 experiment
+DML: Data Manipulation Language
+To view contents of the table
+SELECT * FROM student;
+
+To view specific column of table with specific condition 
+SELECT column_name
+FROM table_name
+WHERE condition;
+For example: 
+SELECT Name
+FROM student
+WHERE Roll_no=2;
+
+INSERT values INTO the table 
+INSERT INTO table_name (column1, column2, ...)VALUES (value1, value2, …);
+Or 
+INSERT INTO table_name VALUES (value1, value2, …);
+For example 
+INSERT INTO employees student (1, 'John', ‘AIML’);
+
+To update record from the table 
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+For example 
+UPDATE student
+SET Department = ‘IoT’
+WHERE Roll_no=1;
+
+To delete rows from table with section condition 
+DELETE FROM table_name WHERE condition;
+For Example 
+DELETE FROM student WHERE name=‘Simran’;

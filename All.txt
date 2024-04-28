@@ -1,0 +1,145 @@
+To open mysql prompt 
+sudo mysql -u root -p
+ Then Enter password ‘computer’
+
+To view databases 
+show databases;
+ To create database 
+create database database_name;
+ Enter into database 
+use database_name;
+
+ To view all table 
+show tables;
+
+ DDL: Data Definition Language 
+Create table
+ 
+create table table_name(coumn_name1 datatype(size), coumn_name2 datatype(size), …);
+ For example: 
+create table Student(Roll_no int(10), Name varchar(10), Department varchar(20)); 
+Alter Table  
+1)ADD: to add a new column 
+2)MODIFY: to modify datatype and size of a column 
+ADD 
+alter table table_name ADD column_name datatype(size);
+ For example : 
+alter table student ADD contact_no int(20);
+ Modify 
+alter table table_name modify column_name datatype(size);
+ For example : 
+alter table student modify Roll_no int(5);
+ To drop/delete the table 
+DROP table table_name;
+DML: Data Manipulation Language
+ To view contents of the table
+ SELECT * FROM student;
+ To view specific column of table with specific condition 
+SELECT column_name
+ FROM table_name
+ WHERE condition;
+ For example: 
+SELECT Name
+ FROM student
+ WHERE Roll_no=2;
+ INSERT values INTO the table 
+INSERT INTO table_name (column1, column2, ...)VALUES (value1, value2, …);
+ Or 
+INSERT INTO table_name VALUES (value1, value2, …);
+ For example 
+INSERT INTO employees student (1, 'John', ‘AIML’);
+ To update record from the table 
+UPDATE table_name
+ SET column1 = value1, column2 = value2, ...
+ WHERE condition;
+ For example 
+UPDATE student
+ SET Department = ‘IoT’
+ WHERE Roll_no=1;
+ To delete rows from table with section condition 
+DELETE FROM table_name WHERE condition;
+ For Example 
+DELETE FROM student WHERE name=‘Simran’;
+ Primary key 
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    salary DECIMAL(10,2) NOT NULL
+ );
+ Unique key 
+CREATE TABLE employees (
+    id INT,
+    email VARCHAR(50) UNIQUE KEY,
+    name VARCHAR(50) NOT NULL,
+    salary DECIMAL(10,2) NOT NULL
+ );
+ Check : condition that must be satisfied by all values in a column 
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    age INT CHECK (age >= 18),
+);
+    salary DECIMAL(10,2) NOT NULL
+ Foreign key 
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    product_id INT,
+    quantity INT,
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+ );
+ CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(50),
+    price DECIMAL(10,2)
+ );
+ Default : The DEFAULT constraint specifies a default value for a column when no value is 
+provided. 
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    salary DECIMAL(10,2) DEFAULT 0.0
+ );
+ Aggregate functions 
+Note: Data_type of column must be integer 
+SELECT AVG(column_name) FROM table_name;   
+SELECT MAX(column_name) FROM table_name;
+ SELECT MIN(column_name) FROM table_name;
+ SELECT COUNT(column_name) FROM table_name;
+ SELECT SUM(column_name) FROM table_name;
+ Search a name that start with a 
+SELECT Name
+ FROM student
+ WHERE Name LIKE ‘a%’;
+ Search a name that ends with b 
+SELECT Name
+ FROM student
+ WHERE Name LIKE ‘%b’;
+ Show the details of students whose Roll no in between 10 to 20 
+SELECT * 
+FROM student
+ WHERE Roll_no BETWEEN 10 AND 20;
+ Show the details of student who lives Either in Delhi or in Mumbai 
+SELECT * 
+FROM student
+ WHERE Address IN (‘Delhi’, ‘Mumbai’);
+To create view  
+CREATE VIEW view_name AS
+ SELECT column_name
+ FROM table_name;
+ For example: 
+CREATE VIEW course_new AS
+ SELECT course_ID, Name
+ FROM course;
+ Making changes in view table using UPDATE method 
+Creating trigger 
+Syntax 
+Create trigger trigger_name
+ [before/after]
+ {insert/update/delete}
+ on table_name
+ for each row
+ [trigger body];
+ For example:  
+create trigger t1 after insert on student for each row update address set address=‘koparkhairane’;
+ Then to show that trigger 
+show triggers; 

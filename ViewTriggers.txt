@@ -1,0 +1,24 @@
+
+To create view 
+CREATE VIEW view_name AS
+SELECT column_name
+FROM table_name;
+For example: 
+CREATE VIEW course_new AS
+SELECT course_ID, Name
+FROM course;
+
+Making changes in view table using UPDATE method 
+
+Creating trigger 
+Syntax 
+Create trigger trigger_name
+[before/after]
+{insert/update/delete}
+on table_name
+for each row
+[trigger body];
+For example: 
+create trigger t1 after insert on student for each row update address set address=‘koparkhairane’;
+Then to show that trigger 
+show triggers;
